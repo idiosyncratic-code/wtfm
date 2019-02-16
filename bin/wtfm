@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Idiosyncratic\Wtfm\Console\Application;
+
+if (PHP_SAPI !== 'cli' && PHP_SAPI !== 'phpdbg') {
+    printf('Warning: wtfm should be invoked via the CLI version of PHP, not the %s SAPI\n', PHP_SAPI);
+}
+
+$autoloadPaths = [
+    realpath(__DIR__ . '/../vendor/autoload.php'),
+    realpath(__DIR__ . '/../../../autoload.php'),
+];
+
+foreach ($autoloadPaths as $path) {
+    if ($path !== false) {
+        require_once $path;
+    }
+}
+
+$app = new Application();
+
+$app->run();
+
+/* vim: set ft=php et :*/
