@@ -1,0 +1,46 @@
+{
+    "name": "idiosyncratic/wtfm",
+    "description": "PHP document generator",
+    "type": "application",
+    "keywords": ["phpdoc"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jason Silkey",
+            "email": "jason@jasonsilkey.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "nikic/php-parser": "^4.2",
+        "symfony/console": "^4.2",
+        "symfony/finder": "^4.2"
+    },
+    "require-dev": {
+        "behat/behat": "^3.5",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+        "doctrine/coding-standard": "^5.0",
+        "phpstan/phpstan": "^0.11.2",
+        "phpunit/phpunit": "^7.5",
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+      "preferred-install": "dist",
+      "sort-packages": true,
+      "optimize-autoloader": true,
+      "discard-changes": true,
+      "bin-dir" : "bin"
+    },
+    "autoload": {
+      "psr-4": {
+        "Idiosyncratic\\Wtfm\\": "src"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Idiosyncratic\\Wtfm\\": "tests"
+      }
+    }
+}
