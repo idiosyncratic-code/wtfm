@@ -67,6 +67,8 @@ class Application extends SymfonyConsoleApplication
 
                 break;
             }
+
+            $dir = dirname($dir);
         }
 
         if ($this->rootDir === null) {
